@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "fe22634c-8d78-470e-afb3-770bc252f78c",
+		"name": "REST-Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27219256"
+	},
+	"item": [
+		{
+			"name": "obtener usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/usuarios?limite=19",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "limite",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"nombre\": \"testeadores2\",\n \"correo\": \"testerrr12121@gmail.com\",\n \"edad\": 19,\n \"password\": \"Deracorena\",\n \"rol\": \"USER_ROLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"correo\": \"sabriprogrammer@gmail.com\",\n \"password\": \"sabriSabri2024\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/usuarios/{MONGO_ID of user to delete}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWFmMmY4MTg4OTcxY2Y3OGE2NWZkZjgiLCJpYXQiOjE3MDU5ODA4MTAsImV4cCI6MTcwNTk5NTIxMH0.zJ60iUpiqlI4Y7aQgBSx9kCfU0vOE1yBjVibO07kwRo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/usuarios/65af343188971cf78a65fe0a",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"65af343188971cf78a65fe0a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/usuarios",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"nombre\": \"tester\",\n \"correo\": \"testerrr1212@gmail.com\",\n \"edad\": 44,\n \"password\": \"Deracorena\",\n \"rol\": \"USER_ROLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/usuarios/65af343188971cf78a65fe0a",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"65af343188971cf78a65fe0a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
