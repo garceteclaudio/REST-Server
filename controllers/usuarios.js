@@ -29,7 +29,7 @@ const usuariosGet =  async(req = request, res = response) => {
 }
 
 const usuariosPost =  async (req, res = response) => {
-
+  //Desestruturar el body
   const {nombre, correo, password, rol} = req.body;
   
   const usuario = new Usuario({nombre, correo, password, rol});

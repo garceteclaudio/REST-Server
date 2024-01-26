@@ -12,7 +12,7 @@ npm install
 **Database - Configure .env file to connect with database:**
 ```
 PORT=8080
-MONGODB_CNN=mongodb+srv://<user>:<password>@miclustercafe.m0xlh.mongodb.net/?retryWrites=true&w=majority
+MONGODB_CNN=mongodb+srv://<user>:<password>@miclustercafe.m0xlh.mongodb.net/CLIENTES?retryWrites=true&w=majority
 MONGODB_CNN_DOCKER='mongodb://localhost:27017/Clientes'
 SECRETORPRIVATEKEY=Est0EsMyPubl1cKey23@66601992
 ```
