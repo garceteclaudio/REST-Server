@@ -3,11 +3,23 @@ const bcrypt = require("bcryptjs");
 
 const Usuario = require("../models/usuario");
 
+const randomDelay = () => {
+  const min = 3000; // 3 segundos en milisegundos
+  const max = 12000; // 12 segundos en milisegundos
+  const delay = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(`Waiting for ${delay / 1000} seconds`);
+  return new Promise(resolve => setTimeout(resolve, delay));
+}
+
+
 
 const usuariosGet =  async(req = request, res = response) => {
 
   const { limite = 5, desde = 0 } = req.query;
   const query = { estado: true };
+
+  // Espera aleatoria antes de proceder
+  await randomDelay();
 
   // const usuarios = await Usuario.find(query)
   //   .skip(Number(desde))
