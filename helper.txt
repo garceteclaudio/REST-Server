@@ -1,0 +1,16 @@
+
+
+Docker
+
+docker pull mongo
+
+//Correr un container de una imagen
+docker run -d -p 27017:27017 mongo
+// listar containners corriendo
+docker ps
+
+// dormir container
+docker stop IDContainer
+
+// correr container "dormido"
+docker start IDContainer

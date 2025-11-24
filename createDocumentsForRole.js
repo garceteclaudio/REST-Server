@@ -3,10 +3,7 @@ const mongoose = require("mongoose");
 async function testMongo() {
   mongoose.set("strictQuery", false);
 
-  mongoose.connect(`mongodb://localhost:27017/Clientes`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  await mongoose.connect("mongodb://localhost:27017/Clientes");
 
   const User = mongoose.model("Role", {
     rol: {
@@ -14,18 +11,17 @@ async function testMongo() {
     },
   });
 
-  // Function call, here is your snippet
-  await User.insertMany([
-    { rol: "ADMIN_ROLE" },
-    { rol: "USER_ROLE" },
-    { rol: "VENTAS_ROLE" },
-  ])
-    .then(function () {
-      console.log("Data inserted"); // Success
-    })
-    .catch(function (error) {
-      console.log(error); // Failure
-    });
+  try {
+    await User.insertMany([
+      { rol: "ADMIN_ROLE" },
+      { rol: "USER_ROLE" },
+      { rol: "VENTAS_ROLE" },
+    ]);
+
+    console.log("Data inserted");
+  } catch (error) {
+    console.log(error);
+  }
 
   await mongoose.disconnect();
 }
