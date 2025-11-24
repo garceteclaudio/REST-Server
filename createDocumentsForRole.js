@@ -1,40 +1,33 @@
-const mongoose = require('mongoose'); 
+const mongoose = require("mongoose");
 
+async function testMongo() {
+  mongoose.set("strictQuery", false);
 
-async function testMongo (){
+  mongoose.connect(`mongodb://localhost:27017/Clientes`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
-mongoose.connect(`mongodb://localhost:27017/Clientes`, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-}); 
-
-const User = mongoose.model('Role', { 
+  const User = mongoose.model("Role", {
     rol: {
-        type: String,
+      type: String,
     },
-}); 
+  });
 
-// Function call, here is your snippet
-await User.insertMany([ 
-    {rol:"ADMIN_ROLE"},
-    {rol:"USER_ROLE"},
-    {rol:"VENTAS_ROLE"}
-]).then(function(){ 
-    console.log("Data inserted")  // Success 
-}).catch(function(error){ 
-    console.log(error)      // Failure 
-});
+  // Function call, here is your snippet
+  await User.insertMany([
+    { rol: "ADMIN_ROLE" },
+    { rol: "USER_ROLE" },
+    { rol: "VENTAS_ROLE" },
+  ])
+    .then(function () {
+      console.log("Data inserted"); // Success
+    })
+    .catch(function (error) {
+      console.log(error); // Failure
+    });
 
-await mongoose.disconnect();
-
+  await mongoose.disconnect();
 }
 
 testMongo();
-
-  
-
-  
-
-
-
-
