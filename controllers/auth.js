@@ -32,11 +32,11 @@ const login = async (req, res = response) => {
 
     // SOLO PERMITIR LOGIN SI ES ADMIN_ROLE
     // SI QUIERO QUE CUALQUIERA HAGA LOGIN, SACO TODO ESTE CODIGO
-    if (usuario.rol !== "ADMIN_ROLE") {
-      return res.status(403).json({
-        msg: "Acceso denegado: solo ADMIN_ROLE puede iniciar sesión",
-      });
-    }
+    //if (usuario.rol !== "ADMIN_ROLE") {
+    //return res.status(403).json({
+    // msg: "Acceso denegado: solo ADMIN_ROLE puede iniciar sesión",
+    //});
+    //}
 
     // GENERAR EL JWT
     const token = await generarJWT(usuario.id);
